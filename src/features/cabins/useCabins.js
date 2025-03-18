@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCabin } from "../../services/apiCabins";
+import { QUERY_KEYS } from "../../constants/queryKeys";
 
 export const useCabins = () => {
   const {
@@ -7,7 +8,7 @@ export const useCabins = () => {
     data: cabin,
     error,
   } = useQuery({
-    queryKey: ["cabins"],
+    queryKey: QUERY_KEYS.CABINS,
     queryFn: getCabin,
   });
   return { isLoading, cabin, error };

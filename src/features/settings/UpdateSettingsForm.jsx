@@ -33,7 +33,7 @@ function UpdateSettingsForm() {
           disabled={isUpdating}
           defaultValue={minBookingLength}
           onBlur={handleUpdateSettings}
-        />
+          />
       </FormRow>
       <FormRow label="Maximum nights/booking">
         <Input
@@ -42,7 +42,8 @@ function UpdateSettingsForm() {
           name="maxBookingLength"
           disabled={isUpdating}
           defaultValue={maxBookingLength}
-        />
+          onBlur={handleUpdateSettings}
+          />
       </FormRow>
       <FormRow label="Maximum guests/booking">
         <Input
@@ -51,7 +52,8 @@ function UpdateSettingsForm() {
           name="maxGuestsPerBooking"
           disabled={isUpdating}
           defaultValue={maxGuestsPerBooking}
-        />
+          onBlur={handleUpdateSettings}
+          />
       </FormRow>
       <FormRow label="Breakfast price">
         <Input
@@ -60,6 +62,7 @@ function UpdateSettingsForm() {
           name="breakfastPrice"
           disabled={isUpdating}
           defaultValue={breakfastPrice}
+          onBlur={handleUpdateSettings}
         />
       </FormRow>
     </Form>
