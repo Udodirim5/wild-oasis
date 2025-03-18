@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
 
 const StyledModal = styled.div`
@@ -17,7 +19,7 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--backdrop-color);
   backdrop-filter: blur(4px);
   z-index: 1000;
@@ -48,3 +50,18 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
+
+const Modal = ({ children, onClose }) => {
+  return (
+    <Overlay>
+      <StyledModal>
+      <Button onClick={onClose}>
+        <HiXMark />
+      </Button>
+        <div>{children}</div>
+      </StyledModal>
+    </Overlay>
+  );
+};
+
+export default Modal;
