@@ -46,7 +46,7 @@ async function createBookings() {
     .from("guests")
     .select("id")
     .order("id");
-    
+
   const allGuestIds = guestsIds.map((cabin) => cabin.id);
   const { data: cabinsIds } = await supabase
     .from("cabins")
@@ -95,7 +95,7 @@ async function createBookings() {
     };
   });
 
-  console.log({finalBookings});
+  console.log({ finalBookings });
 
   const { error } = await supabase.from("bookings").insert(finalBookings);
   if (error) console.log(error.message);

@@ -4,3 +4,5 @@ export const QUERY_KEYS = {
   USERS: ["users"],
   BOOKINGS: ["bookings"],
 };
+
+export const PAGE_LIMIT = 10; // Default page size for pagination
